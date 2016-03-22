@@ -2,6 +2,7 @@ package Gioco;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Gioco {
 
@@ -59,7 +60,7 @@ public class Gioco {
 
                     // Mostra all'utente che hai capito quale amico ha selezionato
                     System.out.println("");
-                    System.out.println("E' stato selezionato:");
+                    System.out.println("E' stato selezionato: " + l_amico.nome);
                     // Salva in memoria l'amico selezionato
                     l_selezionato = l_amico;
 
@@ -73,8 +74,41 @@ public class Gioco {
 
         }
         
+        System.out.println("");
+        System.out.println("Inizio combattimento!");
+        System.out.println("_____________________");
+        System.out.println("");
+        System.out.println("Nemico:");
+        System.out.println(l_nemico.toString());
+        System.out.println("Amico:");
         System.out.println(l_selezionato.toString());
+        
+        // Cercando "Java a caso" su Google é uscito
+        // http://www.simplesoft.it/java/tips/numeri-casuali-in-java.html
+        Random l_random = new Random();
+        boolean l_inizia_amico = l_random.nextBoolean();
 
+//      while (amico é vivo e nemico é vivo){
+            if (l_inizia_amico){
+                System.out.println("Inizia " + l_selezionato.nome);
+                // menu di azioni
+                // seleziona azione
+            } else {
+                System.out.println("Inizia " + l_nemico.nome);
+                // v1: Il nemico attacca
+                // v2: Il nemico fa una azione a caso
+                // v3: Il nemico fa l'azione migliore che gli viene in mente
+            }
+                // esegui azione
+                // visualizza risultato
+            l_inizia_amico = ! l_inizia_amico;
+//      }
+
+//      if (amico é vivo){
+//          ha vinto amico
+//      } else {
+//          ha vinto nemico
+//      }
         
     }
 
