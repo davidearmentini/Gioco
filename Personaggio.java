@@ -31,12 +31,13 @@ public class Personaggio {
      * @param a_vita vita
      * @param a_mana mana
     */
-    public Personaggio(String a_nome, boolean a_amico, int a_esperienza, int a_vita, int a_mana){
+    public Personaggio(String a_nome, boolean a_amico, int a_esperienza, int a_vita, int a_mana, Professione a_professione){
         this.nome = a_nome;
         this.amico = a_amico;
         this.esperienza = a_esperienza;
         this.vita = a_vita;
         this.mana = a_mana;
+        this.professione = a_professione;
     }
     
     public int getlivello (){
@@ -53,6 +54,19 @@ public class Personaggio {
             l_livello = 5;
         }
         return l_livello;
+    }
+    
+    /**
+     * Ritorna un valore String con la descrizione del personaggio
+    */
+    public String toString(){
+        String l_ret = "";
+        l_ret += this.nome + "\n";
+        l_ret += this.professione + "\n";
+        l_ret += "Livello: " + this.getlivello() + "\n";
+        l_ret += "HP: " + this.vita + "\n";
+        l_ret += "MP: " + this.mana + "\n";
+        return l_ret;
     }
     
 }
